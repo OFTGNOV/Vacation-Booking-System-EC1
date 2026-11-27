@@ -1,0 +1,42 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="JTBVacationBooking.SiteMaster" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JTB Vacation Booking</title>
+    <link href="Content/Site.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+<form id="form1" runat="server">
+    <header class="site-header">
+        <div class="nav-wrap">
+            <a class="brand" href="Default.aspx">
+                <span class="brand-mark">JTB</span>
+                <span>Vacation Booking</span>
+            </a>
+            <nav class="main-nav">
+                <a href="Default.aspx">Search vacations</a>
+                <asp:PlaceHolder ID="LoggedOutNav" runat="server">
+                    <a href="Login.aspx">Log in</a>
+                    <a class="nav-cta" href="Register.aspx">Create account</a>
+                </asp:PlaceHolder>
+                <asp:PlaceHolder ID="LoggedInNav" runat="server" Visible="false">
+                    <asp:Label ID="WelcomeLabel" runat="server" CssClass="welcome-label" />
+                    <a href="Logout.aspx">Log out</a>
+                </asp:PlaceHolder>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-shell">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </main>
+
+    <footer class="site-footer">
+        <div>Jamaica Tourist Board Vacation Booking</div>
+    </footer>
+</form>
+</body>
+</html>
